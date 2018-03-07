@@ -1,0 +1,32 @@
+{
+    "name": "Add Ads",
+    "version": "1.1",
+    "description": "My first Chrome extension - HDViet-HDOnline",
+    "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "html/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://static.hdonline.vn/player/v2/2.1.44/jwplayer.js"],
+            "js": ["js/hd-online.js"]
+        },
+        {
+            "matches": ["http://*.hadarone.com/*"],
+            "js": ["js/hdo-ads.js"]
+        },
+        {
+            "matches": ["http://t.hdviet.com/v2/js/hdv.v3.info.js?v=1.0.81"],
+            "js": ["js/hd-viet.js"]
+        }
+    ],
+    "manifest_version": 2,
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "privacy"
+    ]
+}
